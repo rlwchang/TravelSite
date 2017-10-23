@@ -1,0 +1,29 @@
+{
+  "name": "travelsite",
+  "version": "1.0.0",
+  "description": "Fictional travel site tutorial by Brad Schiff",
+  "main": "index.html",
+  "dependencies": {
+    "normalize.css": "^7.0.0",
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.1.6",
+    "gulp": "^3.9.1",
+    "gulp-postcss": "^7.0.0",
+    "gulp-sass": "^3.1.0",
+    "postcss-import": "^11.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rlwchang/TravelSite.git"
+  },
+  "author": "Richard Chang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rlwchang/TravelSite/issues"
+  },
+  "homepage": "https://github.com/rlwchang/TravelSite#readme"
+}
