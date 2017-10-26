@@ -1,0 +1,37 @@
+.row {
+    @include clearfix;
+
+    &--gutters {
+        margin-right: -65px;
+    }
+
+    &--gutters > div {
+        padding-right: 65px;
+    }
+
+    &__b-margin-until-medium {
+        margin-bottom: 1rem;
+    }
+
+    @include atMedium {
+        margin-bottom: 0;   
+    }
+
+    @include atMedium {
+        @for $i from 1 through 12 {
+            &__medium-#{$i} {
+                float: left;
+                width: ((100%/12) * $i);
+            }
+
+            &__medium-#{$i}--larger {
+                width: ((100%/12) * $i + 3.33%);
+            }
+
+
+            &__medium-#{$i}--smaller {
+                width: ((100%/12) * $i - 3.33%);
+            }
+        }
+    }
+}
