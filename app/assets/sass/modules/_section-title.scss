@@ -15,13 +15,19 @@
         display: block;
         margin-left: auto;
         margin-right: auto;
-        margin-bottom: 0.5rem; 
+        margin-bottom: 0.5rem;
 
         @include atSmall {
+            position: relative;
+            top: 8px;
             display: inline;
             margin-right: 0.5rem;
             margin-left: 0;
             margin-bottom: 0;
         }
+    }
+
+    &--blue {
+        color: $mainBlue;
     }
 }
