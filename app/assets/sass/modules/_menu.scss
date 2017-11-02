@@ -1,0 +1,55 @@
+.menu {
+    padding-top: 10px;
+
+    @include atMedium {
+        padding-top: 0px;
+    };
+
+    ul {
+        margin: 0;
+        padding: 0;
+        @include clearfix;
+    }
+
+    li {
+        list-style: none;
+        padding-right: 7px;
+        display: inline-block;
+
+        @include atMedium {
+            float: left;
+            display: block;
+            padding-right: 20px;
+        };
+
+        li:last-child {
+            padding-right: 0;
+
+            @include atMedium {
+                padding-right: 20px;
+            };
+        }
+    }
+
+    a {
+        display: block;
+        color: $mainWhite;
+        text-decoration: none;
+        font-weight: 300;
+        padding: 5px 8px;
+        font-size: 0.8rem;
+        background-color: rgba($mainBlue, 0.5);
+
+        @include atMedium {
+            font-size: 1rem;
+            padding: 12px 0;
+            background-color: transparent;
+        };
+    }
+
+    &--pull-right {
+        @include atMedium {
+            float: right;
+        }
+    }
+}
