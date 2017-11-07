@@ -11,8 +11,6 @@
 *.sass-cache
 node_modules/
 .tmp/
-gulp
-gulpfile.js
 
 # OS or Editor folders
 .DS_Store
