@@ -18,11 +18,11 @@ gulp.task("watch", function() {
         gulp.start("cssInject");
     });
 
-    gulp.watch("./app/assets/scripts/modules/*.js", function() {
+    gulp.watch(["./app/assets/scripts/modules/*.js", "./app/assets/scripts/*.js"], function() {
         gulp.start("scripts");
     });
 
-    gulp.watch("./app/assets/scripts/App.js", function() {
+    gulp.watch("./app/assets/scripts/bundled/App.js", function() {
         browserSync.reload();
     });
 
