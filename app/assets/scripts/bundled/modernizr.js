@@ -1,6 +1,6 @@
 /*!
  * modernizr v3.5.0
- * Build https://modernizr.com/download?-flexbox-hidden-sizes-srcset-target-setclasses-dontmin
+ * Build https://modernizr.com/download?-flexbox-hidden-sizes-srcset-supports-svg-target-setclasses-dontmin
  *
  * Copyright (c)
  *  Faruk Ates
@@ -231,6 +231,31 @@
   }
 
   ;
+/*!
+{
+  "name": "SVG",
+  "property": "svg",
+  "caniuse": "svg",
+  "tags": ["svg"],
+  "authors": ["Erik Dahlstrom"],
+  "polyfills": [
+    "svgweb",
+    "raphael",
+    "amplesdk",
+    "canvg",
+    "svg-boilerplate",
+    "sie",
+    "dojogfx",
+    "fabricjs"
+  ]
+}
+!*/
+/* DOC
+Detects support for SVG in `<embed>` or `<object>` elements.
+*/
+
+  Modernizr.addTest('svg', !!document.createElementNS && !!document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect);
+
 
   /**
    * If the browsers follow the spec, then they would expose vendor-specific styles as:
@@ -817,6 +842,50 @@ Detects support for the Flexible Box Layout model, a.k.a. Flexbox, which allows 
 
 /*!
 {
+  "name": "CSS Supports",
+  "property": "supports",
+  "caniuse": "css-featurequeries",
+  "tags": ["css"],
+  "builderAliases": ["css_supports"],
+  "notes": [{
+    "name": "W3 Spec",
+    "href": "http://dev.w3.org/csswg/css3-conditional/#at-supports"
+  },{
+    "name": "Related Github Issue",
+    "href": "https://github.com/Modernizr/Modernizr/issues/648"
+  },{
+    "name": "W3 Info",
+    "href": "http://dev.w3.org/csswg/css3-conditional/#the-csssupportsrule-interface"
+  }]
+}
+!*/
+
+  var newSyntax = 'CSS' in window && 'supports' in window.CSS;
+  var oldSyntax = 'supportsCSS' in window;
+  Modernizr.addTest('supports', newSyntax || oldSyntax);
+
+/*!
+{
+  "name": "srcset attribute",
+  "property": "srcset",
+  "tags": ["image"],
+  "notes": [{
+    "name": "Smashing Magazine Article",
+    "href": "https://en.wikipedia.org/wiki/APNG"
+    },{
+    "name": "Generate multi-resolution images for srcset with Grunt",
+    "href": "https://addyosmani.com/blog/generate-multi-resolution-images-for-srcset-with-grunt/"
+    }]
+}
+!*/
+/* DOC
+Test for the srcset attribute of images
+*/
+
+  Modernizr.addTest('srcset', 'srcset' in createElement('img'));
+
+/*!
+{
   "name": "CSS :target pseudo-class",
   "caniuse": "css-sel3",
   "property": "target",
@@ -1156,26 +1225,6 @@ Test for the `sizes` attribute on images
       addTest('sizes', isSizes);
     }
   });
-
-/*!
-{
-  "name": "srcset attribute",
-  "property": "srcset",
-  "tags": ["image"],
-  "notes": [{
-    "name": "Smashing Magazine Article",
-    "href": "https://en.wikipedia.org/wiki/APNG"
-    },{
-    "name": "Generate multi-resolution images for srcset with Grunt",
-    "href": "https://addyosmani.com/blog/generate-multi-resolution-images-for-srcset-with-grunt/"
-    }]
-}
-!*/
-/* DOC
-Test for the srcset attribute of images
-*/
-
-  Modernizr.addTest('srcset', 'srcset' in createElement('img'));
 
 
   // Run each test
